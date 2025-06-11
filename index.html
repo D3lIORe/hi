@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votre Atelier GitHub - Style Glacé Indigo</title>
-    <!-- Tailwind CSS CDN -->
+    <title>...</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter pour la lisibilité -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://cdn.discordapp.com/attachments/1350831575096492095/1382339029932183552/converted_image.png?ex=684acb0b&is=6849798b&hm=0486886a9d3b72004ea88f315f5fd05894e7d00c2ed6abd5df260906536ae022&" type="image/x-icon">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            color: #e0f2fe; /* Bleu très clair pour le texte */
+            color: #e0f2fe; 
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Important pour cacher les éléments hors écran */
-
-            /* Plusieurs arrière-plans pour le corps : grille animée + dégradé animé */
+            overflow: hidden; /
             background:
                 /* Grille verticale */
                 linear-gradient(to right, rgba(96, 165, 250, 0.1) 1px, transparent 1px),
@@ -28,42 +24,30 @@
                 linear-gradient(to bottom, rgba(96, 165, 250, 0.1) 1px, transparent 1px),
                 /* Dégradé principal animé */
                 linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
-            
-            /* Tailles des arrière-plans */
             background-size:
-                50px 50px, /* Taille de la cellule de la grille (vertical) */
-                50px 50px, /* Taille de la cellule de la grille (horizontal) */
-                400% 400%; /* Taille du dégradé principal */
-            
-            /* Animations combinées pour la grille et le dégradé de fond */
+                50px 50px, 
+                50px 50px, 
+                400% 400%; 
             animation:
-                animateGrid 10s linear infinite, /* Animation de la grille */
-                animateBackground 20s ease infinite alternate; /* Animation du dégradé */
+                animateGrid 10s linear infinite, 
+                animateBackground 20s ease infinite alternate; 
         }
-
-        /* Animation du dégradé principal */
         @keyframes animateBackground {
             0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
             100% { background-position: 0% 0%, 0% 0%, 100% 100%; }
         }
-
-        /* Animation de la grille */
         @keyframes animateGrid {
             0% { background-position: 0 0, 0 0, 0 0; }
-            100% { background-position: 50px 50px, 50px 50px, 0 0; } /* Déplace la grille de la taille de sa cellule */
+            100% { background-position: 50px 50px, 50px 50px, 0 0; } 
         }
-
-
         .steampunk-panel {
-            /* Dégradé pour le fond du panneau : tons indigo à bleu acier */
             background: linear-gradient(145deg, rgba(17, 24, 39, 0.9) 0%, rgba(31, 41, 55, 0.9) 100%);
-            border-radius: 0.5rem; /* Coins légèrement arrondis */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(63, 131, 248, 0.7) inset; /* Ombre et bordure interne bleu vif */
+            border-radius: 0.5rem; 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(63, 131, 248, 0.7) inset; 
             position: relative;
             overflow: hidden;
-            z-index: 10; /* S'assurer que le panneau est au-dessus des flocons et de la grille */
+            z-index: 10; 
         }
-
         .steampunk-panel::before {
             content: '';
             position: absolute;
@@ -71,29 +55,23 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border: 2px solid #60a5fa; /* Bordure bleu clair */
+            border: 2px solid #60a5fa; 
             border-radius: 0.5rem;
             pointer-events: none;
-            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2); /* Brillance subtile interne */
-        }
-
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2); 
         .steampunk-heading {
-            /* Le dégradé du texte est géré par les classes Tailwind ci-dessous */
             font-weight: bold;
         }
-
-        /* Styles et animations des flocons de neige */
         .snowflake {
             position: absolute;
             background-color: white;
             border-radius: 50%;
             opacity: 0.8;
-            filter: blur(0.5px); /* Légère flou pour un effet plus doux */
-            pointer-events: none; /* Ne pas bloquer les interactions */
-            animation: fall linear infinite; /* Animation de chute */
-            z-index: 1; /* S'assurer que les flocons sont derrière le panneau, mais au-dessus du fond direct */
+            filter: blur(0.5px); 
+            pointer-events: none; 
+            animation: fall linear infinite;
+            z-index: 1; 
         }
-
         @keyframes fall {
             0% {
                 transform: translateY(-10vh);
@@ -113,82 +91,55 @@
     </style>
 </head>
 <body class="flex flex-col items-center justify-center p-4 sm:p-8">
-
     <div class="steampunk-panel w-full max-w-4xl p-6 sm:p-8 space-y-8 my-8">
-
-        <!-- En-tête du Profil - Atelier d'Inventeur Glacé -->
         <header class="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left">
             <div class="flex flex-col sm:flex-row items-center">
-                <!-- Replace this URL with the URL of your own GitHub profile image or a suitable image. -->
                 <img class="w-24 h-24 rounded-full border-4 border-blue-400 shadow-lg mb-4 sm:mb-0 sm:mr-6"
                      src="https://placehold.co/96x96/2563eb/e0f2fe?text=VOTRE+AVATAR" alt="Profile crystal">
                 <div>
-                    <!-- Gradient text for the main title: from light blue to deep blue -->
                     <h1 class="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-400 to-blue-600 steampunk-heading leading-tight">
-                        La Crypte du Codeur
+                        hihihihihihihihihihihihihihihihi
                     </h1>
                     <p class="text-lg text-blue-300 mt-2">
-                        <!-- Leave this space for a subtitle if needed -->
                     </p>
                 </div>
             </div>
         </header>
 
         <hr class="border-t border-blue-700 my-8">
-
-        <!-- Section À Propos - Chroniques d'un Inventeur Glacé -->
         <section class="text-center sm:text-left">
-            <!-- Gradient text for the section subtitle -->
             <h2 class="text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-400 to-blue-600 steampunk-heading">
-                >
+                > just a silly transfem that do nothing, special but archive stuff from a dumb game that goes beep boop
             </h2>
             <p class="text-blue-200 leading-relaxed text-base sm:text-lg">
-                <!-- Leave this space for main content -->
             </p>
         </section>
-
         <hr class="border-t border-blue-700 my-8">
-
-        <!-- Pied de page - Au cœur de l'atelier glacé -->
         <footer class="text-center text-blue-400 text-sm pt-4">
             <p>
-                <!-- Leave this space for footer text -->
             </p>
         </footer>
 
     </div>
 
     <script>
-        // JavaScript for generating and animating snowflakes
         function createSnowflake() {
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');
             document.body.appendChild(snowflake);
-
-            // Random starting position (screen width)
-            const startX = Math.random() * 100; // In vw
+            const startX = Math.random() * 100; 
             snowflake.style.left = `${startX}vw`;
-
-            // Random size
-            const size = Math.random() * 5 + 5; // Between 5px and 10px
+            const size = Math.random() * 5 + 5; 
             snowflake.style.width = `${size}px`;
             snowflake.style.height = `${size}px`;
-
-            // Random animation duration for falling (between 10s and 25s)
             const duration = Math.random() * 15 + 10;
             snowflake.style.animationDuration = `${duration}s`;
-            snowflake.style.animationDelay = `-${Math.random() * duration}s`; // Negative delay for staggered appearance
-
-            // Remove snowflake once animation finishes
+            snowflake.style.animationDelay = `-${Math.random() * duration}s`;
             snowflake.addEventListener('animationend', () => {
                 snowflake.remove();
             });
         }
-
-        // Generate a new snowflake every 500ms (adjust if needed)
         setInterval(createSnowflake, 500);
-
-        // Ensure some snowflakes are present on load
         for (let i = 0; i < 20; i++) {
             createSnowflake();
         }
