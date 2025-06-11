@@ -3,56 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue dans le Futur Rétro</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-    <header class="header">
-        <h1>Neo-Terre : L'Ère des Machines à Vapeur et des Circuits Néon</h1>
-        <nav>
-            <ul>
-                <li><a href="#">À Propos</a></li>
-                <li><a href="#">Galerie</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <title>Votre Atelier GitHub - Style Steampunk</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter pour la lisibilité, mais les couleurs et textures feront l'ambiance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Couleurs Steampunk : tons bruns, métalliques, sépia */
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2a 50%, #05011a 100%); /* Dégradé de brun/noir */
+            color: #d1c8b3; /* Crème vieilli pour le texte */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Motif subtil pour l'ambiance */
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPHBhdGggZmlsbD0iIzNhMmExYSIgZD0iTTAgMGgyMHYyMEgweiIvPgogICAgPHBhdGsgZD0iTTExIDMuNnY0LjgyNEw0LjgyNCAxMSAzLjYgMTF2My43NzZoMy43NzZMMTMuNzc2IDMyLjc3NiAxNC42IDMyLjYyNGwxMi40NjItMTIuNDYyTDI2LjczMyAxMSAxNi43MzMgMTEuNzMzIDExLjcxMyA1Ljc2NnpNNy43NTUgNi43NTdoMy43NzZ2My43NzZMOC45MzkgMTMuNzc2IDcuNzU1IDEz.3NzYgMy42MjQgOS42MzUgNS44MSA3LjE0eiIgZmlsbD0iIzJhMWEwYSIvPgogIDwvZz4KICBTdHlsZT4KICAgIHBhdGggeyBvcGFjaXR5OiAwLjE7IH0KICA8L1N0eWxlPgo8L3N2Zz4=');
+            background-repeat: repeat;
+        }
 
-    <main class="main-content">
-        <section class="hero">
-            <h2>Explorez les Technologies d'Antan Réinventées pour Demain</h2>
-            <p>Plongez dans un monde où l'élégance victorienne rencontre l'innovation cybernétique.</p>
-            <button class="cta-button">Accéder à la Matrice</button>
+        .steampunk-panel {
+            background-color: rgba(30, 20, 10, 0.9); /* Brun sombre semi-transparent */
+            border-radius: 0.5rem; /* Coins légèrement arrondis */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(139, 69, 19, 0.7) inset; /* Ombre et bordure interne cuivrée */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steampunk-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid #5a4b3d; /* Bordure plus foncée */
+            border-radius: 0.5rem;
+            pointer-events: none;
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1); /* Brillance subtile interne */
+        }
+
+        .steampunk-heading {
+            color: #ffaa00; /* Or/cuivre */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .steampunk-button {
+            background: linear-gradient(180deg, #8b4513 0%, #6b2e0a 100%); /* Dégradé de cuivre/bronze */
+            color: #d1c8b3;
+            border: 1px solid #5a4b3d;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease-in-out;
+            /* Rendre non cliquable si l'on retire l'href */
+            pointer-events: none;
+            cursor: default;
+        }
+
+        .steampunk-button:hover {
+            transform: translateY(0); /* Pas de transformation au survol */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Pas de changement d'ombre au survol */
+            background: linear-gradient(180deg, #8b4513 0%, #6b2e0a 100%); /* Pas de changement de fond au survol */
+        }
+
+        /* Ces styles ne sont plus nécessaires car il n'y a plus de liens de projet */
+        /* .steampunk-link {
+            color: #b87333;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        .steampunk-link:hover {
+            color: #b87333;
+            text-decoration: none;
+        } */
+
+        /* Cette classe n'est plus utilisée car il n'y a plus de cartes de projet */
+        /* .project-card {
+            background-color: rgba(45, 35, 25, 0.9);
+            border: 1px solid #5a4b3d;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 0 2px #b87333 inset;
+        } */
+
+        /* Cette classe n'est plus utilisée car il n'y a plus de tags de projet */
+        /* .tag {
+            background-color: #5a4b3d;
+            color: #d1c8b3;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.625rem;
+        } */
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4 sm:p-8">
+
+    <div class="steampunk-panel w-full max-w-4xl p-6 sm:p-8 space-y-8 my-8">
+
+        <!-- En-tête du Profil - Atelier d'Inventeur -->
+        <header class="flex flex-col sm:flex-row items-center justify-between text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center">
+                <!-- Remplacez cette URL par l'URL de votre propre image de profil GitHub ou une image appropriée. -->
+                <img class="w-24 h-24 rounded-full border-4 border-yellow-800 shadow-lg mb-4 sm:mb-0 sm:mr-6"
+                     src="https://placehold.co/96x96/8B4513/D1C8B3?text=VOTRE+AVATAR" alt="Engrenage de profil">
+                <div>
+                    <h1 class="text-4xl sm:text-5xl font-bold steampunk-heading leading-tight">
+                        L'Atelier de l'Inventeur
+                    </h1>
+                    <p class="text-lg text-gray-400 mt-2">
+                        // Maître des Mécanismes & Architecte Logiciel //
+                    </p>
+                </div>
+            </div>
+            <nav class="flex space-x-4 mt-6 sm:mt-0">
+                <!-- Liens de navigation désactivés et non cliquables -->
+                <a href="#" class="steampunk-button px-4 py-2 flex items-center">
+                    <span class="mr-2 text-xl">&#x2699;</span> <!-- Engrenage -->
+                    GitHub
+                </a>
+                <a href="#" class="steampunk-button px-4 py-2 flex items-center">
+                    <span class="mr-2 text-xl">&#x2318;</span> <!-- Clé de commandement (pour les rouages) -->
+                    LinkedIn
+                </a>
+                <a href="#" class="steampunk-button px-4 py-2 flex items-center">
+                    <span class="mr-2 text-xl">&#x1F527;</span> <!-- Clé anglaise -->
+                    Portfolio
+                </a>
+            </nav>
+        </header>
+
+        <hr class="border-t border-gray-700 my-8">
+
+        <!-- Section À Propos - Chroniques d'un Inventeur -->
+        <section class="text-center sm:text-left">
+            <h2 class="text-3xl font-semibold mb-4 steampunk-heading">
+                > CHRONIQUES DE L'ATELIER
+            </h2>
+            <p class="text-gray-300 leading-relaxed text-base sm:text-lg">
+                Salutations, curieux explorateurs des mécaniques. Mon labeur se concentre sur l'assemblage minutieux de pièces logicielles, créant des automates de code capables de résoudre les défis les plus complexes. Je puise mon inspiration dans les merveilles de l'ère industrielle et l'élégance des engrenages. Mon objectif est de bâtir des systèmes fiables, aux rouages bien huilés, pour faire avancer le savoir.
+            </p>
         </section>
 
-        <section class="features">
-            <div class="feature-item">
-                <h3>Robots à Engrenages</h3>
-                <p>Des automates fidèles, forgés dans le cuivre et animés par la vapeur.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Vaisseaux Aériens</h3>
-                <p>Des dirigeables majestueux sillonnant les cieux, propulsés par des réacteurs à éther.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Interfaces Lumineuses</h3>
-                <p>Des écrans crépitants de néon et de tubes cathodiques pour une immersion totale.</p>
-            </div>
-        </section>
+        <hr class="border-t border-gray-700 my-8">
 
-        <section class="gallery">
-            <h2>Nos Visions du Futur Passé</h2>
-            <div class="image-grid">
-                <img src="images/retro-futur-1.jpg" alt="Ville Néo-Victorienne">
-                <img src="images/retro-futur-2.jpg" alt="Interface Rétro-Tech">
-                <img src="images/retro-futur-3.jpg" alt="Robot Ancien Modèle">
-            </div>
-        </section>
-    </main>
+        <!-- Pied de page - Au cœur de l'atelier -->
+        <footer class="text-center text-gray-500 text-sm pt-4">
+            <p>
+                Transmis depuis l'Atelier Vaporeux. &copy; 1888 - 2025 L'Inventeur Mécanique. Tous droits de brevet réservés.
+            </p>
+        </footer>
 
-    <footer class="footer">
-        <p>&copy; 2077 Laboratoires Temporels Alpha. Tous droits réservés.</p>
-    </footer>
+    </div>
 
-    <script src="script.js"></script> </body>
+</body>
 </html>
